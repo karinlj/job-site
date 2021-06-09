@@ -1,24 +1,47 @@
 # hyrule-jobs
 
-## Project setup
+## Description
+
+Application for exploring Vue.js 3 with Typescript.
+
+## Prerequisites
+
+NodeJS
+
+## Installation
+
+To clone
+
+`git clone https://github.com/karinlj/vue-super-smoothies.git`
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+## To run
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+## To build
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
-```
-npm run lint
-```
+Then use the dist folder you get.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Built With
+
+- vue.js
+- CSS
+
+## Author
+
+- **Karin Ljunggren** - [karinlj](https://github.com/karinlj)
+
+## Acknowledgements
+
+Thank's to The Net Ninja.  
+`https://www.youtube.com/channel/UCW5YeuERMmlnqo4oq8vwUpg`
