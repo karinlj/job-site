@@ -12,7 +12,7 @@ NodeJS
 
 To clone
 
-`git clone https://github.com/karinlj/vue-super-smoothies.git`
+`git clone https://github.com/karinlj/job-site.git`
 
 ```
 npm install
