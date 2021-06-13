@@ -1,25 +1,37 @@
 <template>
-<div class="app">
-<!-- <p> {{name}} - {{age}}</p>
+  <div class="app">
+    <!-- <p> {{name}} - {{age}}</p>
 <button @click="changeName('Zelda')">Change name</button>
  <button @click="changeAge('30')">Change age</button> -->
-<jobList :jobs="jobs"/>
-</div>
+    <header>
+      <div class="title">
+        <img src="./assets/heart.svg" alt="site-logo" />
+        <h1>Hyrule Jobs</h1>
+      </div>
+      <div class="order">
+        <button @click="handleClick('title')">Order by title</button>
+        <button @click="handleClick('location')">Order by location</button>
+        <button @click="handleClick('salary')">Order by salary</button>
+      </div>
+    </header>
+
+    <jobList :jobs="jobs" :orderterm="orderterm" />
+  </div>
 </template>
 
 <script lang="ts">
-import Job from './types/Job'
-import JobList from './components/JobList.vue'
+import Job from "./types/Job";
+import OrderTerm from "./types/OrderTerm";
+import JobList from "./components/JobList.vue";
 // import { defineComponent, reactive,ref,toRefs } from 'vue';
-import { defineComponent,ref } from 'vue';
-
+import { defineComponent, ref } from "vue";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    JobList
+    JobList,
   },
-  setup(){
+  setup() {
     //with reactive values
     // const state = reactive({
     //   name: 'Link',
@@ -32,14 +44,42 @@ export default defineComponent({
     // const name = ref('Link');
     // const age = ref<number | string>(25);
     // return {name, age}
-      const jobs = ref<Job[]>([
-      { title: 'farm worker', location: 'lon lon ranch', salary: 30000, id: '1' },
-      { title: 'quarryman', location: 'death mountain', salary: 40000, id: '2' },
-      { title: 'flute player', location: 'the lost woods', salary: 35000, id: '3' },
-      { title: 'fisherman', location: 'lake hylia', salary: 21000, id: '4' },
-      { title: 'prison guard', location: 'gerudo valley', salary: 32000, id: '5' }
-    ])
-    return {jobs}
+    const jobs = ref<Job[]>([
+      {
+        title: "farm worker",
+        location: "lon lon ranch",
+        salary: 30000,
+        id: "1",
+      },
+      {
+        title: "quarryman",
+        location: "death mountain",
+        salary: 40000,
+        id: "2",
+      },
+      {
+        title: "flute player",
+        location: "the lost woods",
+        salary: 35000,
+        id: "3",
+      },
+      { title: "fisherman", location: "lake hylia", salary: 21000, id: "4" },
+      {
+        title: "prison guard",
+        location: "gerudo valley",
+        salary: 32000,
+        id: "5",
+      },
+    ]);
+    //local state using ref
+    //generic argument to type it
+    //initially 'title'
+    const orderterm = ref<OrderTerm>("title");
+    const handleClick = (term: OrderTerm) => {
+      orderterm.value = term;
+      console.log(term);
+    };
+    return { jobs, handleClick, orderterm };
   },
   methods: {
     // changeName(name:string){
@@ -52,10 +92,36 @@ export default defineComponent({
     //      console.log('age: ', age);
     //   return age;
     // }
-  }
+  },
 });
 </script>
 
 <style>
-
+header {
+  text-align: center;
+}
+header .order {
+  margin-top: 20px;
+}
+button {
+  margin: 0 10px;
+  color: #1195c9;
+  border: 3px solid #1195c9;
+  background: #d5f0ff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+header .title {
+  display: flex;
+  justify-content: center;
+}
+header img {
+  width: 60px;
+  margin-right: 20px;
+}
+header h1 {
+  font-size: 3em;
+}
 </style>
