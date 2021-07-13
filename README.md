@@ -36,7 +36,7 @@ Then use the dist folder you get.
 
 ## Built With
 
-- Vue.js
+- Vue.js 3
 - Typescript
 - CSS
 
