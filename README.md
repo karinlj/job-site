@@ -4,6 +4,8 @@
 
 Application for exploring Vue.js 3 with Typescript.
 
+![Screenshot](/src/assets/screenshot.jpg?raw=true "Screenshot")
+
 ## Prerequisites
 
 NodeJS
