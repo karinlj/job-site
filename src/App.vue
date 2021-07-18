@@ -72,7 +72,7 @@ export default defineComponent({
       },
     ]);
     //local state using ref
-    //generic argument to type it
+    //generic argument for typing
     //initially 'title'
     const orderterm = ref<OrderTerm>("title");
     const handleClick = (term: OrderTerm) => {
